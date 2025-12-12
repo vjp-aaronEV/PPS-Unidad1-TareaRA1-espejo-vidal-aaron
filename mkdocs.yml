@@ -1,0 +1,10 @@
+# Nombre que aparece en el navegador y en el título de la página
+site_name: Documentación tarea UT1 PPS
+
+# Lista de los enlaces a los archivos de documentación
+nav:
+  - Home: index.md
+  - Creacion Git: git.md
+  - Reflexion Personal: reflexionPersonal.md
+# Ruta de los archivos de documentación
+doc_dir: docs 
