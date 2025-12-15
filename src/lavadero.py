@@ -64,11 +64,11 @@ class Lavadero:
         """
         Inicia un nuevo ciclo de lavado, validando reglas de negocio.
         
-        :raises RuntimeError: Si el lavadero está ocupado (Requisito 3).
+        :raises ValueError: Si el lavadero está ocupado (Requisito 3).
         :raises ValueError: Si se intenta encerar sin secado a mano (Requisito 2).
         """
         if self.__ocupado:
-            raise RuntimeError("No se puede iniciar un nuevo lavado mientras el lavadero está ocupado")
+            raise ValueError("No se puede iniciar un nuevo lavado mientras el lavadero está ocupado")
         
         if not secado_a_mano and encerado:
             raise ValueError("No se puede encerar el coche sin secado a mano")
