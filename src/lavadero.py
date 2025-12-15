@@ -86,15 +86,14 @@ class Lavadero:
         Precio base: 5.00€ (Implícito, 5.00€ de base + 1.50€ de prelavado + 1.00€ de secado + 1.20€ de encerado = 8.70€)
         """
         coste_lavado = 5.00
-        
         if self.__prelavado_a_mano:
             coste_lavado += 1.50 
         
         if self.__secado_a_mano:
-            coste_lavado += 1.20 
+            coste_lavado += 1.00 
             
         if self.__encerado:
-            coste_lavado += 1.00 
+            coste_lavado += 1.20 
             
         self.__ingresos += coste_lavado
         return coste_lavado
@@ -126,17 +125,18 @@ class Lavadero:
         
         elif self.__fase == self.FASE_RODILLOS:
             if self.__secado_a_mano:
-                self.__fase = self.FASE_SECADO_AUTOMATICO 
-
+                self.__fase = self.FASE_SECADO_MANO 
             else:
-                self.__fase = self.FASE_SECADO_MANO
+                self.__fase = self.FASE_SECADO_AUTOMATICO
         
         elif self.__fase == self.FASE_SECADO_AUTOMATICO:
             self.terminar()
         
         elif self.__fase == self.FASE_SECADO_MANO:
-
-            self.terminar() 
+            if self.__encerado:
+                self.__fase = self.FASE_ENCERADO 
+            else:
+                self.terminar()
         
         elif self.__fase == self.FASE_ENCERADO:
             self.terminar() 
@@ -176,7 +176,7 @@ class Lavadero:
 
     def ejecutar_y_obtener_fases(self, prelavado, secado, encerado):
         """Ejecuta un ciclo completo y devuelve la lista de fases visitadas."""
-        self._hacer_lavado(prelavado, secado, encerado)
+        self.hacerLavado(prelavado, secado, encerado)
         fases_visitadas = [self.fase]
         
         while self.ocupado:
