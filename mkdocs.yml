@@ -7,7 +7,7 @@ nav:
   - Creacion Git: git.md
   - Ejecución del código: ejecucionCodigo.md  
   - Pruebas unitarias: pruebas.md
-  - Ejecución en sanbox: sanbox.md
+  - Ejecución en sanbox: sandbox.md
   - Reflexion Personal: reflexionPersonal.md
 # Ruta de los archivos de documentación
 doc_dir: docs 

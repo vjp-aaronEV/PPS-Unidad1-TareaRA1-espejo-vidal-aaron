@@ -3,6 +3,7 @@
 ### 1. Cuando se crea un lavadero, éste no tiene ingresos, no está ocupado, está en fase 0 y todas las opciones de lavado (prelavado a mano, secado a mano y encerado) están puestas a false.
 
 Como se puede ver en la imagen, este test pasa correctamente por lo que no hay que corregir nada en el código. El test hace estos pasos:
+
 - Comprueba que la fase del lavadero es inactiva
 - Comprueba que los ingresos son de 0
 - Comprueba que **no** está ocupado
@@ -13,6 +14,7 @@ Como se puede ver en la imagen, este test pasa correctamente por lo que no hay q
 
 ### 2. Cuando se intenta comprar un lavado con encerado pero sin secado a mano, se produce una ValueError.
 Al igual que el test anterior pasa sin ningún error, lo que significa que la ejecución del código con las opciones asignadas da el error esperado, de nuevo estás son las fases del test:
+
 - Ejecuta un lavado con las siguientes opciones: 
     - Prelavado: False (Sin prelavado)
     - Secado a mano: False (Sin secado a mano)
@@ -24,6 +26,7 @@ Al igual que el test anterior pasa sin ningún error, lo que significa que la ej
 
 ### 3. Cuando se intenta hacer un lavado mientras que otro ya está en marcha, se produce una ValueError.
 Fases del test: 
+
 - Inicia un lavado con cualquier configuración
 - Intenta empezar otro lavado cuando se está ejecutando uno y comprueba si el error lanzado es el ```ValueError```.
 
@@ -39,6 +42,7 @@ Una vez cambiado si volvemos a ejecutar la prueba ya podemos ver que ahora si lo
 
 ### 4. Si seleccionamos un lavado con prelavado a mano, los ingresos de lavadero son 6,50€.
 Fases del test: 
+
 - Inicia un lavado con las opciones:
     - Prelavado a mano: True (Con prelavado a mano)
     - Secado a mano: False (Sin secado a mano)
@@ -53,6 +57,7 @@ En este caso podemos ver que pasa el test correctamente por lo que no tendríamo
 
 ### 5. Si seleccionamos un lavado con secado a mano, los ingresos son 6,00€.
 Fases del test: 
+
 - Inicia un lavado con las opciones:
     - Prelavado a mano: False (Sin prelavado a mano)
     - Secado a mano: True (Con secado a mano)
@@ -72,6 +77,7 @@ Una vez cambiado el código podemos ver que ya pasa el test correctamente.
 
 ### 6. Si seleccionamos un lavado con secado a mano y encerado, los ingresos son 7,20€.
 Fases del test: 
+
 - Inicia un lavado con las opciones:
     - Prelavado a mano: False (Sin prelavado a mano)
     - Secado a mano: True (Con secado a mano)
@@ -92,6 +98,7 @@ Una vez corregido el código ya podemos ver que el test pasa correctamente
 
 ### 7. Si seleccionamos un lavado con prelavado a mano y secado a mano, los ingresos son 7,50€.
 Fases del test:
+
 - Inicia un lavado con las opciones:
     - Prelavado a mano: True (Con prelavado a mano)
     - Secado a mano: True (Con secado a mano)
@@ -106,6 +113,7 @@ En este caso el test pasa correctamente por lo que no tenemos que modificar el c
 
 ### 8. Si seleccionamos un lavado con prelavado a mano, secado a mano y encerado, los ingresos son 8,70€.
 Fases del test:
+
 - Inicia un lavado con las opciones:
     - Prelavado a mano: True (Con prelavado a mano)
     - Secado a mano: True (Con secado a mano)
@@ -120,6 +128,7 @@ Al igual que antes el test pasa correctamente por lo que no tenemos que modifica
 
 ### 9. Si seleccionamos un lavado sin extras y vamos avanzando fases, el lavadero pasa por las fases 0, 1, 3, 4, 5, 6, 0.
 Fases del test:
+
 - Creación de un array con las fases esperadas
 - Creación de un array con las fases obtenidas, se inicializa ejecutando el método de ```ejecutar_y_obtener_fases()```, con las configuraciones de lavado:
     - Prelavado a mano: False (Sin prelavado a mano)
@@ -139,6 +148,7 @@ Una vez hecha la correccion cuando ejecutamos el test ya vemos que pasa correcta
 
 ### 10. Si seleccionamos un lavado con prelavado a mano y vamos avanzando fases, el lavadero pasa por las fases 0, 1, 2, 3, 4, 5, 6, 0.
 Fases del test:
+
 - Creación de un array con las fases esperadas
 - Creación de un array con las fases obtenidas, se inicializa ejecutando el método de ```ejecutar_y_obtener_fases()```, con las configuraciones de lavado:
     - Prelavado a mano: True (Con prelavado a mano)
@@ -153,6 +163,7 @@ En este caso si que pasa el test correctamente por lo que podemos pasar al sigui
 
 ### 11. Si seleccionamos un lavado con secado a mano y vamos avanzando fases, el lavadero pasa por las fases 0, 1, 3, 4, 5, 7, 0.
 Fases del test:
+
 - Creación de un array con las fases esperadas
 - Creación de un array con las fases obtenidas, se inicializa ejecutando el método de ```ejecutar_y_obtener_fases()```, con las configuraciones de lavado:
     - Prelavado a mano: False (Sin prelavado a mano)
@@ -165,6 +176,7 @@ En este caso también pasa el test correctamente por lo que podemos pasar al sig
 
 ### 12. Si seleccionamos un lavado con secado a mano y encerado y vamos avanzando fases, el lavadero pasa por las fases 0, 1, 3, 4, 5, 7, 8, 0.
 Fases del test:
+
 - Creación de un array con las fases esperadas
 - Creación de un array con las fases obtenidas, se inicializa ejecutando el método de ```ejecutar_y_obtener_fases()```, con las configuraciones de lavado:
     - Prelavado a mano: False (Sin prelavado a mano)
@@ -184,6 +196,7 @@ Una vez hecha la correccion cuando ejecutamos el test ya vemos que pasa correcta
 
 ### 13. Si seleccionamos un lavado con prelavado a mano y secado a mano y vamos avanzando fases, el lavadero pasa por las fases 0, 1, 2, 3, 4, 5, 7, 0.
 Fases del test:
+
 - Creación de un array con las fases esperadas
 - Creación de un array con las fases obtenidas, se inicializa ejecutando el método de ```ejecutar_y_obtener_fases()```, con las configuraciones de lavado:
     - Prelavado a mano: True (Con prelavado a mano)
@@ -198,6 +211,7 @@ En este caso pasa el test correctamente por lo que podemos pasar al siguiente te
 
 ### 14. Si seleccionamos un lavado con prelavado a mano, secado a mano y encerado y vamos avanzando fases, el lavadero pasa por las fases 0, 1, 2, 3, 4, 5, 7, 8, 0.
 Fases del test:
+
 - Creación de un array con las fases esperadas
 - Creación de un array con las fases obtenidas, se inicializa ejecutando el método de ```ejecutar_y_obtener_fases()```, con las configuraciones de lavado:
     - Prelavado a mano: True (Con prelavado a mano)
