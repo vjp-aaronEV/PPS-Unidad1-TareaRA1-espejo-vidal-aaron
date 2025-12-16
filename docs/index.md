@@ -11,4 +11,5 @@ Esta tarea tiene como objetivo evaluar los conocimientos sobre las tecnologías 
 
 # Enlaces a los otros documentos
 - [Creación del repositorio (git.md)](git.md)
+- [Ejecución de las pruebas unitarias](pruebas.md)
 - [Reflexion Personal (reflexionPersonal.md)](reflexionPersonal.md)

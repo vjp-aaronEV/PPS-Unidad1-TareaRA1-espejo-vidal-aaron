@@ -5,6 +5,7 @@ site_name: Documentación tarea UT1 PPS
 nav:
   - Home: index.md
   - Creacion Git: git.md
+  - Pruebas unitarias: pruebas.md
   - Reflexion Personal: reflexionPersonal.md
 # Ruta de los archivos de documentación
 doc_dir: docs 
