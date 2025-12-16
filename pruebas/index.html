@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Pruebas unitarias - Documentación tarea UT1 PPS</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Documentación tarea UT1 PPS</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../git/" class="nav-link">Creacion Git</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../ejecucionCodigo/" class="nav-link">Ejecución del código</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active" aria-current="page">Pruebas unitarias</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../sandbox/" class="nav-link">Ejecución en sanbox</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../reflexionPersonal/" class="nav-link">Reflexion Personal</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../ejecucionCodigo/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../sandbox/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#ejecucion-de-las-pruebas-unitarias" class="nav-link">Ejecución de las pruebas unitarias</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#ejecucion-de-todas-las-pruebas" class="nav-link">Ejecución de todas las pruebas</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="ejecucion-de-las-pruebas-unitarias">Ejecución de las pruebas unitarias</h1>
+<h3 id="1-cuando-se-crea-un-lavadero-este-no-tiene-ingresos-no-esta-ocupado-esta-en-fase-0-y-todas-las-opciones-de-lavado-prelavado-a-mano-secado-a-mano-y-encerado-estan-puestas-a-false">1. Cuando se crea un lavadero, éste no tiene ingresos, no está ocupado, está en fase 0 y todas las opciones de lavado (prelavado a mano, secado a mano y encerado) están puestas a false.</h3>
+<p>Como se puede ver en la imagen, este test pasa correctamente por lo que no hay que corregir nada en el código. El test hace estos pasos:</p>
+<ul>
+<li>Comprueba que la fase del lavadero es inactiva</li>
+<li>Comprueba que los ingresos son de 0</li>
+<li>Comprueba que <strong>no</strong> está ocupado</li>
+<li>Y comprueba que <strong>ninguna</strong> de las fases esté inicializada
+<img alt="Ejecuión test 1" src="../img/Ejecucion_Pruebas/1/1.png" /></li>
+</ul>
+<hr />
+<h3 id="2-cuando-se-intenta-comprar-un-lavado-con-encerado-pero-sin-secado-a-mano-se-produce-una-valueerror">2. Cuando se intenta comprar un lavado con encerado pero sin secado a mano, se produce una ValueError.</h3>
+<p>Al igual que el test anterior pasa sin ningún error, lo que significa que la ejecución del código con las opciones asignadas da el error esperado, de nuevo estás son las fases del test:</p>
+<ul>
+<li>Ejecuta un lavado con las siguientes opciones: <ul>
+<li>Prelavado: False (Sin prelavado)</li>
+<li>Secado a mano: False (Sin secado a mano)</li>
+<li>Encerado: True (Con encerado)</li>
+</ul>
+</li>
+<li>Comprueba que la ejecución de estas opciones da como resultado el error <code>ValueError</code>
+<img alt="Ejecuión test 2" src="../img/Ejecucion_Pruebas/2/2.png" /></li>
+</ul>
+<hr />
+<h3 id="3-cuando-se-intenta-hacer-un-lavado-mientras-que-otro-ya-esta-en-marcha-se-produce-una-valueerror">3. Cuando se intenta hacer un lavado mientras que otro ya está en marcha, se produce una ValueError.</h3>
+<p>Fases del test: </p>
+<ul>
+<li>Inicia un lavado con cualquier configuración</li>
+<li>Intenta empezar otro lavado cuando se está ejecutando uno y comprueba si el error lanzado es el <code>ValueError</code>.</li>
+</ul>
+<p>En este caso el test falla, ya que nosotros estamos buscando que la ejecución produzca un error de tipo <code>ValueError</code> pero nos está devolviendo un error de tipo <code>RuntimeError</code>.
+<img alt="Ejecuión test 2 fallida" src="../img/Ejecucion_Pruebas/3/3_0_runtime.png" />
+Si miramos el código, podemos ver que es porque en el código está especifcado que lance este error, para poder solcionarlo simplemente cambiamos el error <code>RuntimeError</code> por <code>ValueError</code>.
+<img alt="Codigo antes de solucion" src="../img/Ejecucion_Pruebas/3/3_1_antes_correccion.png" />
+<img alt="Codigo despues de solucion" src="../img/Ejecucion_Pruebas/3/3_2_despues_correccion.png" />
+Una vez cambiado si volvemos a ejecutar la prueba ya podemos ver que ahora si lo pasa correctamente.
+<img alt="Test 3 ejecutado satisfactoriamente" src="../img/Ejecucion_Pruebas/3/3_4_test_corregido.png" /></p>
+<hr />
+<h3 id="4-si-seleccionamos-un-lavado-con-prelavado-a-mano-los-ingresos-de-lavadero-son-650">4. Si seleccionamos un lavado con prelavado a mano, los ingresos de lavadero son 6,50€.</h3>
+<p>Fases del test: </p>
+<ul>
+<li>Inicia un lavado con las opciones:<ul>
+<li>Prelavado a mano: True (Con prelavado a mano)</li>
+<li>Secado a mano: False (Sin secado a mano)</li>
+<li>Encerado: False (Sin encerado)</li>
+</ul>
+</li>
+<li>Ejecuta la función de cobrar</li>
+<li>Comprueba que los ingresos del lavadero son 6.50€</li>
+</ul>
+<p>En este caso podemos ver que pasa el test correctamente por lo que no tendríamos que corregir nada en el código.
+<img alt="Test 4 ejecutado" src="../img/Ejecucion_Pruebas/4/4.png" /></p>
+<hr />
+<h3 id="5-si-seleccionamos-un-lavado-con-secado-a-mano-los-ingresos-son-600">5. Si seleccionamos un lavado con secado a mano, los ingresos son 6,00€.</h3>
+<p>Fases del test: </p>
+<ul>
+<li>Inicia un lavado con las opciones:<ul>
+<li>Prelavado a mano: False (Sin prelavado a mano)</li>
+<li>Secado a mano: True (Con secado a mano)</li>
+<li>Encerado: False (Sin encerado)</li>
+</ul>
+</li>
+<li>Ejecuta la función de cobrar</li>
+<li>Comprueba que los ingresos del lavadero son 6.00€</li>
+</ul>
+<p>En este caso el test falla por lo que tenemos que ir al código para ver porque está fallando.
+<img alt="Test 5 ejecutado fallido" src="../img/Ejecucion_Pruebas/5/5_0_test_fallido.png" />
+En el código podemos ver cuál es el problema, el test falla porque el coste de <strong>secado a mano</strong> está configurado como 1.20€ en vez de 1.00€ que sería el valor correcto.
+<img alt="Código test 5 antes correcion" src="../img/Ejecucion_Pruebas/5/5_1_antes_correccion.png" />
+<img alt="Código test 5 después correcion" src="../img/Ejecucion_Pruebas/5/5_2_despues_correccion.png" />
+Una vez cambiado el código podemos ver que ya pasa el test correctamente.
+<img alt="Test 5 ejecutado correctamente" src="../img/Ejecucion_Pruebas/5/5_3_test_correcto.png" /></p>
+<hr />
+<h3 id="6-si-seleccionamos-un-lavado-con-secado-a-mano-y-encerado-los-ingresos-son-720">6. Si seleccionamos un lavado con secado a mano y encerado, los ingresos son 7,20€.</h3>
+<p>Fases del test: </p>
+<ul>
+<li>Inicia un lavado con las opciones:<ul>
+<li>Prelavado a mano: False (Sin prelavado a mano)</li>
+<li>Secado a mano: True (Con secado a mano)</li>
+<li>Encerado: True (Con encerado)</li>
+</ul>
+</li>
+<li>Ejecuta la función de cobrar</li>
+<li>Comprueba que los ingresos del lavadero son 7.20€</li>
+</ul>
+<p>Al igual que el anterior test este también falla por lo que que tenemos que ir al código para cuál es el fallo.</p>
+<p><img alt="Test 6 fallido" src="../img/Ejecucion_Pruebas/6/6_0_test_fallido.png" />
+En el código podemos ver que falla porque el <strong>coste de encerado</strong> está asignado como 1.00€, cambiamos el valor a 1.20€ para corregir el fallo.
+<img alt="Código test 6 antes correcciion" src="../img/Ejecucion_Pruebas/6/6_1_antes_correccion.png" />
+<img alt="Código test 6 después correcciion" src="../img/Ejecucion_Pruebas/6/6_2_despues_correccion.png" />
+Una vez corregido el código ya podemos ver que el test pasa correctamente
+<img alt="Test 6 correcto" src="../img/Ejecucion_Pruebas/6/6_3_test_correcto.png" /></p>
+<hr />
+<h3 id="7-si-seleccionamos-un-lavado-con-prelavado-a-mano-y-secado-a-mano-los-ingresos-son-750">7. Si seleccionamos un lavado con prelavado a mano y secado a mano, los ingresos son 7,50€.</h3>
+<p>Fases del test:</p>
+<ul>
+<li>Inicia un lavado con las opciones:<ul>
+<li>Prelavado a mano: True (Con prelavado a mano)</li>
+<li>Secado a mano: True (Con secado a mano)</li>
+<li>Encerado: False (Sin encerado)</li>
+</ul>
+</li>
+<li>Ejecuta la función de cobrar</li>
+<li>Comprueba que los ingresos del lavadero sean 7.50€</li>
+</ul>
+<p>En este caso el test pasa correctamente por lo que no tenemos que modificar el código.
+<img alt="Test 7 ejecutado" src="../img/Ejecucion_Pruebas/7/7.png" /></p>
+<hr />
+<h3 id="8-si-seleccionamos-un-lavado-con-prelavado-a-mano-secado-a-mano-y-encerado-los-ingresos-son-870">8. Si seleccionamos un lavado con prelavado a mano, secado a mano y encerado, los ingresos son 8,70€.</h3>
+<p>Fases del test:</p>
+<ul>
+<li>Inicia un lavado con las opciones:<ul>
+<li>Prelavado a mano: True (Con prelavado a mano)</li>
+<li>Secado a mano: True (Con secado a mano)</li>
+<li>Encerado: True (Con encerado)</li>
+</ul>
+</li>
+<li>Ejecuta la función de cobrar</li>
+<li>Comprueba que los ingresos del lavadero sean 8.70€</li>
+</ul>
+<p>Al igual que antes el test pasa correctamente por lo que no tenemos que modificar el código.
+<img alt="Test 8 ejecutado" src="../img/Ejecucion_Pruebas/8/8.png" /></p>
+<hr />
+<h3 id="9-si-seleccionamos-un-lavado-sin-extras-y-vamos-avanzando-fases-el-lavadero-pasa-por-las-fases-0-1-3-4-5-6-0">9. Si seleccionamos un lavado sin extras y vamos avanzando fases, el lavadero pasa por las fases 0, 1, 3, 4, 5, 6, 0.</h3>
+<p>Fases del test:</p>
+<ul>
+<li>Creación de un array con las fases esperadas</li>
+<li>Creación de un array con las fases obtenidas, se inicializa ejecutando el método de <code>ejecutar_y_obtener_fases()</code>, con las configuraciones de lavado:<ul>
+<li>Prelavado a mano: False (Sin prelavado a mano)</li>
+<li>Secado a mano: False (Sin secado a mano)</li>
+<li>Encerado: False (Sin encerado)
+Comprueba que ambos arrays son iguales, es decir, si se han ejecutado las fases correctas.</li>
+</ul>
+</li>
+</ul>
+<p>En este caso el test ha fallado ya que las fases obtenidas no son las mismas que las fases esperadas, por esto tenemos que ir al código para ver cuál es el fallo
+<img alt="Test 9 fallido" src="../img/Ejecucion_Pruebas/9/9_0_test_fallido.png" />
+En el código vemos que es por que la condición está al revés por lo que, en caso de que el <strong>secado a mano</strong> sea true, pasa a la fase de <code>FASE_SECADO_AUTOMATICO</code>, por lo que en mi caso lo que hago es simplemente cambiar el contenido de la condición y lo intercambio.
+<img alt="Codigo test 9 antes correccion" src="../img/Ejecucion_Pruebas/9/9_1_antes_correccion.png" />
+<img alt="Codigo test 9 después correccion" src="../img/Ejecucion_Pruebas/9/9_2_despues_correccion.png" />
+Una vez hecha la correccion cuando ejecutamos el test ya vemos que pasa correctamente.
+<img alt="Test 9 correcto" src="../img/Ejecucion_Pruebas/9/9_3_test_correcto.png" /></p>
+<hr />
+<h3 id="10-si-seleccionamos-un-lavado-con-prelavado-a-mano-y-vamos-avanzando-fases-el-lavadero-pasa-por-las-fases-0-1-2-3-4-5-6-0">10. Si seleccionamos un lavado con prelavado a mano y vamos avanzando fases, el lavadero pasa por las fases 0, 1, 2, 3, 4, 5, 6, 0.</h3>
+<p>Fases del test:</p>
+<ul>
+<li>Creación de un array con las fases esperadas</li>
+<li>Creación de un array con las fases obtenidas, se inicializa ejecutando el método de <code>ejecutar_y_obtener_fases()</code>, con las configuraciones de lavado:<ul>
+<li>Prelavado a mano: True (Con prelavado a mano)</li>
+<li>Secado a mano: False (Sin secado a mano)</li>
+<li>Encerado: False (Sin encerado)
+Comprueba que ambos arrays son iguales, es decir, si se han ejecutado las fases correctas.</li>
+</ul>
+</li>
+</ul>
+<p>En este caso si que pasa el test correctamente por lo que podemos pasar al siguiente test.
+<img alt="Test 10 ejecutado" src="../img/Ejecucion_Pruebas/10/10.png" /></p>
+<hr />
+<h3 id="11-si-seleccionamos-un-lavado-con-secado-a-mano-y-vamos-avanzando-fases-el-lavadero-pasa-por-las-fases-0-1-3-4-5-7-0">11. Si seleccionamos un lavado con secado a mano y vamos avanzando fases, el lavadero pasa por las fases 0, 1, 3, 4, 5, 7, 0.</h3>
+<p>Fases del test:</p>
+<ul>
+<li>Creación de un array con las fases esperadas</li>
+<li>Creación de un array con las fases obtenidas, se inicializa ejecutando el método de <code>ejecutar_y_obtener_fases()</code>, con las configuraciones de lavado:<ul>
+<li>Prelavado a mano: False (Sin prelavado a mano)</li>
+<li>Secado a mano: True (Con secado a mano)</li>
+<li>Encerado: False (Sin encerado)
+Comprueba que ambos arrays son iguales, es decir, si se han ejecutado las fases correctas.</li>
+</ul>
+</li>
+</ul>
+<p>En este caso también pasa el test correctamente por lo que podemos pasar al siguiente test.
+<img alt="Test 11 ejecutado" src="../img/Ejecucion_Pruebas/11/11.png" /></p>
+<h3 id="12-si-seleccionamos-un-lavado-con-secado-a-mano-y-encerado-y-vamos-avanzando-fases-el-lavadero-pasa-por-las-fases-0-1-3-4-5-7-8-0">12. Si seleccionamos un lavado con secado a mano y encerado y vamos avanzando fases, el lavadero pasa por las fases 0, 1, 3, 4, 5, 7, 8, 0.</h3>
+<p>Fases del test:</p>
+<ul>
+<li>Creación de un array con las fases esperadas</li>
+<li>Creación de un array con las fases obtenidas, se inicializa ejecutando el método de <code>ejecutar_y_obtener_fases()</code>, con las configuraciones de lavado:<ul>
+<li>Prelavado a mano: False (Sin prelavado a mano)</li>
+<li>Secado a mano: True (Con secado a mano)</li>
+<li>Encerado: True (Con encerado)
+Comprueba que ambos arrays son iguales, es decir, si se han ejecutado las fases correctas.</li>
+</ul>
+</li>
+</ul>
+<p>En este caso el test ha fallado ya que las fases obtenidas no son las mismas que las fases esperadas, por esto tenemos que ir al código para ver cuál es el fallo
+<img alt="Test 12 fallido" src="../img/Ejecucion_Pruebas/12/12_0_test_fallido.png" />
+En el código vemos que es porque al estar en la fase de <code>FASE_SECADO_MANO</code> no hay ninguna comprobación de si <strong>encerado</strong> está a true, esto genera que el lavado termine sin hacer el encerado, por lo que lo que hago es añadir la condición de si <strong>encerado</strong> es true, pase a la fase de encerado, en caso contrario que termine el lavado
+<img alt="Codigo test 12 antes correccion" src="../img/Ejecucion_Pruebas/12/12_1_antes_correccion.png" />
+<img alt="Codigo test 12 después correccion" src="../img/Ejecucion_Pruebas/12/12_2_despues_correccion.png" />
+Una vez hecha la correccion cuando ejecutamos el test ya vemos que pasa correctamente.
+<img alt="Test 12 correcto" src="../img/Ejecucion_Pruebas/12/12_3_test_correcto.png" /></p>
+<hr />
+<h3 id="13-si-seleccionamos-un-lavado-con-prelavado-a-mano-y-secado-a-mano-y-vamos-avanzando-fases-el-lavadero-pasa-por-las-fases-0-1-2-3-4-5-7-0">13. Si seleccionamos un lavado con prelavado a mano y secado a mano y vamos avanzando fases, el lavadero pasa por las fases 0, 1, 2, 3, 4, 5, 7, 0.</h3>
+<p>Fases del test:</p>
+<ul>
+<li>Creación de un array con las fases esperadas</li>
+<li>Creación de un array con las fases obtenidas, se inicializa ejecutando el método de <code>ejecutar_y_obtener_fases()</code>, con las configuraciones de lavado:<ul>
+<li>Prelavado a mano: True (Con prelavado a mano)</li>
+<li>Secado a mano: True (Con secado a mano)</li>
+<li>Encerado: False (Sin encerado)
+Comprueba que ambos arrays son iguales, es decir, si se han ejecutado las fases correctas.</li>
+</ul>
+</li>
+</ul>
+<p>En este caso pasa el test correctamente por lo que podemos pasar al siguiente test.
+<img alt="Test 13 ejecutado" src="../img/Ejecucion_Pruebas/13/13.png" /></p>
+<hr />
+<h3 id="14-si-seleccionamos-un-lavado-con-prelavado-a-mano-secado-a-mano-y-encerado-y-vamos-avanzando-fases-el-lavadero-pasa-por-las-fases-0-1-2-3-4-5-7-8-0">14. Si seleccionamos un lavado con prelavado a mano, secado a mano y encerado y vamos avanzando fases, el lavadero pasa por las fases 0, 1, 2, 3, 4, 5, 7, 8, 0.</h3>
+<p>Fases del test:</p>
+<ul>
+<li>Creación de un array con las fases esperadas</li>
+<li>Creación de un array con las fases obtenidas, se inicializa ejecutando el método de <code>ejecutar_y_obtener_fases()</code>, con las configuraciones de lavado:<ul>
+<li>Prelavado a mano: True (Con prelavado a mano)</li>
+<li>Secado a mano: True (Con secado a mano)</li>
+<li>Encerado: True (Con encerado)
+Comprueba que ambos arrays son iguales, es decir, si se han ejecutado las fases correctas.</li>
+</ul>
+</li>
+</ul>
+<p>En este caso pasa el test correctamente por lo que podemos pasar al siguiente test.
+<img alt="Test 14 ejecutado" src="../img/Ejecucion_Pruebas/14/14.png" /></p>
+<hr />
+<h2 id="ejecucion-de-todas-las-pruebas">Ejecución de todas las pruebas</h2>
+<p>Ahora ya como se puede ver todas las pruebas pasan correctamente
+<img alt="Ejecucion todas las pruebas" src="../img/Ejecucion_Pruebas/test_completados.png" /></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
