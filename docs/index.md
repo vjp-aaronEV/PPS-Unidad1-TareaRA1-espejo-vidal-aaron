@@ -11,5 +11,8 @@ Esta tarea tiene como objetivo evaluar los conocimientos sobre las tecnologías 
 
 # Enlaces a los otros documentos
 - [Creación del repositorio (git.md)](git.md)
+- [Ejecución del código](ejecucionCodigo.md)
+- Elementos de Python: El archivo se llama **Actividad-Elementos-Programa-Python.ipynb** y está en la raíz del proyecto de github.
 - [Ejecución de las pruebas unitarias](pruebas.md)
+- [Ejecución del programa en sandbox](sandbox.md)
 - [Reflexion Personal (reflexionPersonal.md)](reflexionPersonal.md)

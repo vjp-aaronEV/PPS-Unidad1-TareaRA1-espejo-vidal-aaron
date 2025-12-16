@@ -110,7 +110,6 @@ class TestLavadero(unittest.TestCase):
     # Test 10: Si seleccionamos un lavado con prelavado a mano y vamos avanzando fases, 
     # el lavadero pasa por las fases 0, 1, 2, 3, 4, 5, 6, 0.
     def test10_flujo_con_prelavado_mano(self):
-        """Test 10: Simula el flujo con prelavado a mano."""
         fases_esperadas = [0, 1, 2, 3, 4, 5, 6, 0]
         # Ejecutar el ciclo completo y obtener las fases
         fases_obtenidas = self.lavadero.ejecutar_y_obtener_fases(prelavado=True, secado=False, encerado=False)
@@ -123,7 +122,6 @@ class TestLavadero(unittest.TestCase):
     # Test 11: Si seleccionamos un lavado con secado a mano y vamos avanzando fases, 
     # el lavadero pasa por las fases 0, 1, 3, 4, 5, 7, 0.
     def test11_flujo_con_secado_mano(self):
-        """Test 11: Simula el flujo con secado a mano."""
         fases_esperadas = [0, 1, 3, 4, 5, 7, 0]
         # Ejecutar el ciclo completo y obtener las fases
         fases_obtenidas = self.lavadero.ejecutar_y_obtener_fases(prelavado=False, secado=True, encerado=False)
@@ -136,7 +134,6 @@ class TestLavadero(unittest.TestCase):
     # Test 12: Si seleccionamos un lavado con secado a mano y encerado y vamos avanzando fases, 
     # el lavadero pasa por las fases 0, 1, 3, 4, 5, 7, 8, 0.
     def test12_flujo_con_secado_mano_y_encerado(self):
-        """Test 12: Simula el flujo con secado a mano y encerado."""
         fases_esperadas = [0, 1, 3, 4, 5, 7, 8, 0]
         # Ejecutar el ciclo completo y obtener las fases
         fases_obtenidas = self.lavadero.ejecutar_y_obtener_fases(prelavado=False, secado=True, encerado=True)
@@ -149,7 +146,6 @@ class TestLavadero(unittest.TestCase):
     # Test 13: Si seleccionamos un lavado con prelavado a mano y secado a mano y vamos avanzando fases, 
     # el lavadero pasa por las fases 0, 1, 2, 3, 4, 5, 7, 0.
     def test13_flujo_con_prelavado_mano_y_secado_mano(self):
-        """Test 13: Simula el flujo con prelavado a mano y secado a mano."""
         fases_esperadas = [0, 1, 2, 3, 4, 5, 7, 0]
         # Ejecutar el ciclo completo y obtener las fases
         fases_obtenidas = self.lavadero.ejecutar_y_obtener_fases(prelavado=True, secado=True, encerado=False)
@@ -162,7 +158,6 @@ class TestLavadero(unittest.TestCase):
    # Test 14: Si seleccionamos un lavado con prelavado a mano, secado a mano y encerado y vamos avanzando fases, 
    # el lavadero pasa por las fases 0, 1, 2, 3, 4, 5, 7, 8, 0.
     def test14_flujo_con_prelavado_mano_secado_mano_y_encerado(self):
-        """Test 14: Simula el flujo con prelavado a mano, secado a mano y encerado."""
         fases_esperadas = [0, 1, 2, 3, 4, 5, 7, 8, 0]
         # Ejecutar el ciclo completo y obtener las fases
         fases_obtenidas = self.lavadero.ejecutar_y_obtener_fases(prelavado=True, secado=True, encerado=True)
